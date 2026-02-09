@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Detectar preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Otimizações para dispositivos móveis */
+@media (max-width: 768px) {
+  /* Reduzir complexidade de animações em mobile */
+  .mobile-optimized {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Simplificar gradientes animados em mobile */
+  .animate-gradient {
+    animation-duration: 20s; /* Mais lento em mobile */
+  }
+  
+  .animate-gradient-shift {
+    animation-duration: 12s; /* Mais lento em mobile */
+  }
+  
+  /* Reduzir frequência de pulse em mobile */
+  .animate-pulse-glow {
+    animation-duration: 3s; /* Mais lento */
+  }
+}
+
+/* Otimizações de performance para todas as animações */
+.performance-optimized {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(239,68,68,0.5), 0 0 10px rgba(239,68,68,0.3), 0 0 15px rgba(220,38,38,0.2);
+  }
+  50% { 
+    box-shadow: 0 0 10px rgba(239,68,68,0.8), 0 0 20px rgba(239,68,68,0.6), 0 0 30px rgba(220,38,38,0.4);
+  }
+}
+
+/* Animações otimizadas para mobile */
+@keyframes mobile-float {
+  0%, 100% { transform: translateY(0px) translateZ(0); }
+  50% { transform: translateY(-10px) translateZ(0); }
+}
+
+@keyframes mobile-rotate {
+  from { transform: rotate(0deg) translateZ(0); }
+  to { transform: rotate(360deg) translateZ(0); }
+}
+
+@keyframes mobile-scale {
+  0%, 100% { transform: scale(1) translateZ(0); }
+  50% { transform: scale(1.05) translateZ(0); }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Animações mobile-friendly */
+.mobile-float {
+  animation: mobile-float 3s ease-in-out infinite;
+}
+
+.mobile-rotate {
+  animation: mobile-rotate 4s linear infinite;
+}
+
+.mobile-scale {
+  animation: mobile-scale 2s ease-in-out infinite;
+}
+
+.neon-glow {
+  filter: drop-shadow(0 0 8px #ef4444) drop-shadow(0 0 16px #dc2626);
+}
+
+.neon-glow-red {
+  filter: drop-shadow(0 0 8px #ff0040) drop-shadow(0 0 16px #ff8080);
+}
+
+.neon-glow-green {
+  filter: drop-shadow(0 0 8px #00ff40) drop-shadow(0 0 16px #40ff80);
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 5px #ef4444,
+    0 0 10px #ef4444,
+    0 0 15px #dc2626,
+    0 0 20px #dc2626;
+}
+
+.neon-text-small {
+  text-shadow: 
+    0 0 3px #ef4444,
+    0 0 6px #dc2626;
+}
+
+.neon-text-red {
+  text-shadow: 
+    0 0 5px #ff0040,
+    0 0 10px #ff0040,
+    0 0 15px #ff8080;
+}
+
+.neon-text-green {
+  text-shadow: 
+    0 0 5px #00ff40,
+    0 0 10px #00ff40,
+    0 0 15px #40ff80;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 5px rgba(239,68,68,0.5),
+    0 0 10px rgba(239,68,68,0.3),
+    0 0 15px rgba(220,38,38,0.2),
+    inset 0 0 5px rgba(239,68,68,0.1);
+}
+
+.neon-border-red {
+  box-shadow: 
+    0 0 5px rgba(255,0,64,0.5),
+    0 0 10px rgba(255,0,64,0.3),
+    0 0 15px rgba(255,128,128,0.2);
+}
+
+.neon-border-success {
+  box-shadow: 
+    0 0 8px rgba(239,68,68,0.6),
+    0 0 16px rgba(239,68,68,0.4),
+    0 0 24px rgba(220,38,38,0.3);
+}
+
+.neon-border-subtle {
+  box-shadow: 
+    0 0 3px rgba(239,68,68,0.3),
+    0 0 6px rgba(220,38,38,0.2);
+}
+
+.neon-ring {
+  box-shadow: 
+    0 0 10px rgba(239,68,68,0.4),
+    0 0 20px rgba(239,68,68,0.2),
+    inset 0 0 10px rgba(239,68,68,0.1);
+}
+
+.neon-corner {
+  box-shadow: 
+    0 0 5px rgba(239,68,68,0.6),
+    0 0 10px rgba(239,68,68,0.4);
+}
+
+.neon-button {
+  box-shadow: 
+    0 0 10px rgba(239,68,68,0.5),
+    0 0 20px rgba(239,68,68,0.3),
+    0 0 30px rgba(220,38,38,0.2);
+}
+
+.neon-result {
+  box-shadow: 
+    0 0 15px rgba(239,68,68,0.4),
+    0 0 30px rgba(239,68,68,0.2),
+    0 0 45px rgba(220,38,38,0.1);
+}
+
+.neon-progress {
+  box-shadow: 
+    0 0 8px rgba(239,68,68,0.6),
+    0 0 16px rgba(239,68,68,0.4);
+}
+
+.neon-progress-red {
+  box-shadow: 
+    0 0 8px rgba(255,0,64,0.6),
+    0 0 16px rgba(255,0,64,0.4);
+}
+
+.neon-progress-green {
+  box-shadow: 
+    0 0 8px rgba(0,255,64,0.6),
+    0 0 16px rgba(0,255,64,0.4);
+}
+
+.neon-badge {
+  box-shadow: 
+    0 0 8px rgba(239,68,68,0.5),
+    0 0 16px rgba(239,68,68,0.3);
+}
+
+.neon-badge-red {
+  box-shadow: 
+    0 0 8px rgba(255,0,64,0.5),
+    0 0 16px rgba(255,0,64,0.3);
+}
+
+.neon-badge-green {
+  box-shadow: 
+    0 0 8px rgba(0,255,64,0.5),
+    0 0 16px rgba(0,255,64,0.3);
+}
+
+/* Otimizações específicas para dispositivos com baixa performance */
+@media (max-width: 480px) {
+  .performance-critical {
+    animation-duration: 4s !important;
+    animation-timing-function: ease-out !important;
+  }
+  
+  /* Reduzir blur e shadows em dispositivos muito pequenos */
+  .neon-glow {
+    filter: drop-shadow(0 0 4px #ef4444);
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 3px #ef4444, 0 0 6px #dc2626;
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 3px rgba(239,68,68,0.5), 0 0 6px rgba(239,68,68,0.3);
+  }
+}
